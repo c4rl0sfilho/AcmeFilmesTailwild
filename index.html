@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/main.js" type="module"defer></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>AcmeFilmes</title>
 </head>
-<body>
+<body class="size-full bg-[#5C2786]">
     <nav class="bg-[#FFCC48] p-6">
         <div class="container mx-auto flex justify-between items-center">
           <!-- Logo -->
           <a href="#" class="text-white text-xl font-semibold"><img src="./img/AcmeMovies.svg" alt="Logo"></a>
           
           <!-- Links -->
-          <ul class="flex space-x-4">
-            <li><a href="#" class="text-white hover:text-[#5C2786]">Home</a></li>
-            <li><a href="#" class="text-white hover:text-[#5C2786]">Sobre</a></li>
-            <li><a href="#" class="text-white hover:text-[#5C2786]">Serviços</a></li>
-            <li><a href="#" class="text-white hover:text-[#5C2786]">Contato</a></li>
+          <ul class="flex space-x-4 items-center">
+            <li><a href="#" class="text-[#5C2786] hover:text-white font-bold text-2xl">Movies</a></li>
+            <li><a href="#" class="text-[#5C2786] hover:text-white  font-bold text-2xl">Series</a></li>
+            <li><a href="#" class="text-[#5C2786] hover:text-white font-bold text-2xl">Genrs</a></li>
+            <li><input type="text" class="bg-[#5C2786] border-none w-72 ml-96"></li>
             <div class="">
                 <div class="bg-[#5C2786] h-12 w-12 rounded-full mr-4">
                 </div>
@@ -27,7 +28,44 @@
       </nav>
     
       <!-- Conteúdo da página -->
+
+      <div class="content  size-full px-8">
+        <div class="carrosel h-96 flex items-center justify-center">
+            <img src="./img/interestellar.png" alt="" class="h-64 ">
+        </div>
+        <div class="text-white text-3xl font-semibold pt-6">For You</div>
+        <div class="movies flex space-x-6 pt-3 ">
+          <img src="./img/joker.png" alt="">
+          <img src="./img/TheBatman.png" alt="">
+          <img src="./img/fastAndFurious.png"  alt="">
+          <img src="./img/interestellar.png" alt="">
+          <img src="./img/ironMan4.png" alt="">
+        </div>
+        <div class="text-white text-3xl font-semibold pt-6">Movies</div>
+        <div class="movies flex space-x-6 pt-3 ">
+          <img src="./img/ironMan4.png" alt="">
+          <img src="./img/joker.png" alt="">
+          <img src="./img/interestellar.png" alt="">
+          <img src="./img/fastAndFurious.png"  alt="">
+          <img src="./img/TheBatman.png" alt="">
+        </div>
+        <div class="text-white text-3xl font-semibold pt-6">Continue</div>
+        <div class="movies flex space-x-6 pt-3 ">
+          <img src="./img/fastAndFurious.png"  alt="">
+          <img src="./img/TheBatman.png" alt="">
+          <img src="./img/joker.png" alt="">
+          <img src="./img/ironMan4.png" alt="">
+          <img src="./img/interestellar.png" alt="">
+        </div>
+      </div>
       
       
 </body>
 </html>
+<style>
+  img{
+    cursor: pointer;
+    width: 180px;
+    height: 105px;
+  }
+</style>
