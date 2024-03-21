@@ -1,26 +1,30 @@
 'use strict'
 
-$(document).ready(function(){
-  $('.slick-carousel').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    // Mais opções personalizadas...
-  });
-});
+// $(document).ready(function(){
+//   $('.slick-carousel').slick({
+//     infinite: true,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 2000,
+//     // Mais opções personalizadas...
+//   });
+// });
 
 
 
 
-import {getFilmes, getFilmeByID, postFilme} from './filmes.js'
+import {getFilmes, getFilmeByID, postFilme, putFilme, deleteFilme} from './filmes.js'
 
 function criarCard(filme){
     const card = document.createElement('div')
     const tituloFilme = document.createElement('h1')
     tituloFilme.textContent = filme.nome
-    card.appendChild(tituloFilme)
+    const fotoCapaFilme = document.createElement('img')
+    fotoCapaFilme.src = filme.foto_capa
+    // card.appendChild(tituloFilme)
+    card.appendChild(fotoCapaFilme)
+    card.classList.add('movie','min-w-72', 'h-40','space-x-6','pt-3')
 
     return card
 }
@@ -28,7 +32,7 @@ function criarCard(filme){
 
 
 async function preencherContainer(){
-    const container = document.querySelector('body')
+    const container = document.getElementById('forYou')
 
     const filmes = await getFilmes()
 
@@ -38,6 +42,8 @@ async function preencherContainer(){
         console.log(card)
     })
 }
+preencherContainer()
+preencherContainer()
 preencherContainer()
 
 const filme = {
@@ -50,4 +56,6 @@ const filme = {
     "valor_unitario": 20
 }
 
-postFilme(filme)
+deleteFilme(12)
+
+//postFilme(filme)
